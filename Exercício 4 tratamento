@@ -1,0 +1,22 @@
+#4. Tendo um arquivo de texto, conte quantas palavras tem esse arquivo,
+#além de contar quantas linhas existem. Seu script deve verificar se o
+#arquivo está no diretório
+
+import os
+
+nome_arquivo = "texto.txt"
+
+try:
+    if not os.path.exists(nome_arquivo):
+        raise FileNotFoundError(f"Arquivo '{nome_arquivo}' não encontrado no diretório.")
+    
+    with open(nome_arquivo, "r") as arquivo:
+        linhas = arquivo.readlines()
+        num_linhas = len(linhas)
+        num_palavras = sum(len(linha.split()) for linha in linhas)
+
+    print(f"Número de linhas: {num_linhas}")
+    print(f"Número de palavras: {num_palavras}")
+
+except FileNotFoundError as e:
+    print(e)
