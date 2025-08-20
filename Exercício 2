@@ -1,0 +1,17 @@
+#2. Faça um programa que leia os dados de uma pessoa (Nome, RG, CPF, ano de
+#nascimento e armazene em um arquivo txt, calculando a idade da pessoa.
+
+from datetime import date
+
+nome = input("Nome: ")
+rg = input("RG: ")
+cpf = input("CPF: ")
+ano_nascimento = int(input("Ano de nascimento: "))
+
+ano_atual = date.today().year
+idade = ano_atual - ano_nascimento
+
+with open("Seus_Dados.txt", "w") as arquivo:
+    arquivo.write(f"Nome: {nome}\nRG: {rg}\nCPF: {cpf}\nAno de Nascimento: {ano_nascimento}\nIdade: {idade}\n")
+
+print("Dados salvos em Seus_Dados.txt")
