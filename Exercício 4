@@ -1,0 +1,18 @@
+#4. Elabore um programa em Python que leia o nome e duas notas de um aluno do
+#teclado, calcule a média e armazene em um arquivo txt o nome, a média final e
+#se o mesmo foi Aprovado (média >=6) ou Reprovado (média < 6).
+
+
+nome = input("Nome do aluno: ")
+nota1 = float(input("Nota 1: "))
+nota2 = float(input("Nota 2: "))
+
+media = (nota1 + nota2) / 2
+situacao = "Aprovado" if media >= 6 else "Reprovado"
+
+with open("aluno.txt", "w") as arquivo:
+    arquivo.write(f"Nome: {nome}\nMédia: {media:.2f}\nSituação: {situacao}\n")
+
+print("Dados do aluno salvos em aluno.txt")
+
+
