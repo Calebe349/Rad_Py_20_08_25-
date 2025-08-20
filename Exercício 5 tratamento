@@ -1,0 +1,25 @@
+#5. Um script que leia um nome completo, converta a primeira letra em letra
+#maiúscula (joão silva => João Silva) e armazene dentro de um arquivo.
+#Elabore tratamento de exceção para verificar se é um nome válido e se o
+#arquivo está no diretório.
+
+
+import os
+
+try:
+    nome_completo = input("Digite seu nome completo: ")
+    if not all(x.isalpha() or x.isspace() for x in nome_completo) or nome_completo.strip() == "":
+        raise ValueError("Nome inválido! Apenas letras e espaços são permitidos.")
+    
+    nome_formatado = nome_completo.title()  # Converte a primeira letra de cada palavra para maiúscula
+    arquivo_nome = "nomes.txt"
+    
+    with open(arquivo_nome, "w") as arquivo:
+        arquivo.write(nome_formatado + "\n")
+    
+    print(f"Nome salvo no arquivo '{arquivo_nome}': {nome_formatado}")
+
+except ValueError as e:
+    print(e)
+except FileNotFoundError:
+    print(f"Erro: Arquivo '{arquivo_nome}' não encontrado.")
