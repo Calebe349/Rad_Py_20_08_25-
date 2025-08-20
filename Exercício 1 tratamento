@@ -1,0 +1,10 @@
+#1. Faça um script que leia um nome e verifique se o nome é string válido, usando o
+#try/except
+
+try:
+    nome = input("Digite seu nome: ")
+    if not nome.isalpha():
+        raise ValueError("Nome inválido! Deve conter apenas letras.")
+    print(f"Nome válido: {nome}")
+except ValueError as e:
+    print(e)
