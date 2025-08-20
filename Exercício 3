@@ -1,0 +1,9 @@
+#3. Faça um programa que leia um arquivo txt e insere cada linha em uma lista
+
+lista_linhas = []
+
+with open("Seus_Dados.txt", "r") as arquivo:
+    for linha in arquivo:
+        lista_linhas.append(linha.strip())
+
+print("Conteúdo do arquivo em lista:", lista_linhas)
