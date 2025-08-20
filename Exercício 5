@@ -1,0 +1,16 @@
+#5. Faça um algoritmo em Python que leia dois números inteiros do teclado, faça
+#uma mini calculadora (soma, subtração, multiplicação e divisão) e armazene
+#todos os resultados em um arquivo txt.
+
+num1 = int(input("Digite o primeiro número: "))
+num2 = int(input("Digite o segundo número: "))
+
+soma = num1 + num2
+subtracao = num1 - num2
+multiplicacao = num1 * num2
+divisao = num1 / num2 if num2 != 0 else "Indefinido (divisão por zero)"
+
+with open("calculadora.txt", "w") as arquivo:
+    arquivo.write(f"Soma: {soma}\nSubtração: {subtracao}\nMultiplicação: {multiplicacao}\nDivisão: {divisao}\n")
+
+print("Resultados salvos em calculadora.txt")
