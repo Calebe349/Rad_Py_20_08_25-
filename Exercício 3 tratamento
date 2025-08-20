@@ -1,0 +1,18 @@
+#3. Tendo uma lista de números inteiros, faça o cálculo do fatorial de cada número da
+#lista. Faça os seguintes tratamento de exceções, caso:
+#a) Exista um elemento da lista que não seja número.
+#b) Exista um número negativo.
+
+import math
+
+lista = [5, 3, -2, 'a', 4]  # Exemplo 
+for item in lista:
+    try:
+        if not isinstance(item, int):
+            raise TypeError(f"Erro: '{item}' não é um número inteiro.")
+        if item < 0:
+            raise ValueError(f"Erro: Número negativo '{item}' não pode ter fatorial.")
+        fatorial = math.factorial(item)
+        print(f"Fatorial de {item} é {fatorial}")
+    except (TypeError, ValueError) as e:
+        print(e)
