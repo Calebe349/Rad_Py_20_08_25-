@@ -1,0 +1,15 @@
+#2. Leitura de dois números inteiros do teclado e realizar a divisão dos números, fazendo
+#os seguintes tratamentos das exceções caso:
+#a) Exista divisão por zero
+#b) Um dos números digitados não é número.
+
+try:
+    num1 = int(input("Digite o primeiro número: "))
+    num2 = int(input("Digite o segundo número: "))
+    resultado = num1 / num2
+except ZeroDivisionError:
+    print("Erro: Divisão por zero não é permitida.")
+except ValueError:
+    print("Erro: Um dos valores digitados não é um número.")
+else:
+    print(f"Resultado da divisão: {resultado}")
